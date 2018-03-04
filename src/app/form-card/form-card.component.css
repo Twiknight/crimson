@@ -1,0 +1,9 @@
+.card {
+  height: 80%;
+  width: 80%;
+}
+
+:host {
+  height: 100%;
+  width: 100%;
+}
