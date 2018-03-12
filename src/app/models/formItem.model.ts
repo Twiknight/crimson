@@ -1,17 +1,20 @@
-export interface FormItem {
-  id: string;
-  label: string;
-  defaultValue: number | string;
-  value: number | string;
+import { Decimal } from "decimal.js";
+
+export class FormItem {
+  defaultValue: Decimal;
+  value: Decimal;
+
+  constructor(public id: string, public description: string,
+    defaultValue: Decimal.Value, value?: Decimal.Value) {
+    this.defaultValue = new Decimal(defaultValue)
+    if (value) {
+      this.value = new Decimal(value)
+    } else {
+      this.value = new Decimal(defaultValue)
+    }
+  }
+
+  public modify(value: Decimal.Value) {
+    return new FormItem(this.id, this.description, this.defaultValue,new Decimal(value));
+  }
 }
-
-export const createFormItem = (id: string, label: string, defaultValue: (number | string)) => (
-  {
-    id: id,
-    label: label,
-    defaultValue: defaultValue,
-    value: defaultValue
-  });
-
-export const modifyItemValue =
-  (item: FormItem, newValue: string| number) => Object.assign({}, item, {value: newValue});

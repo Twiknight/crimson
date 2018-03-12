@@ -10,12 +10,17 @@ import {
 
 import { AppComponent } from './app.component';
 import { FormCardComponent } from './form-card/form-card.component';
+import { CharacterPropsService } from './services/character-props.service';
+import { ToPercentPipe } from './utils/to-percent.pipe';
+import { PhysicalEhancePropsService } from './services/physical-props.service';
+import { DamageService } from './services/damage.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormCardComponent
+    FormCardComponent,
+    ToPercentPipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,11 @@ import { FormCardComponent } from './form-card/form-card.component';
     MatInputModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    CharacterPropsService,
+    PhysicalEhancePropsService,
+    DamageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

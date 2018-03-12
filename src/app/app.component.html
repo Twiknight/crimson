@@ -1,14 +1,17 @@
-<mat-grid-list cols="4" rowHeight="2:3">
+<mat-grid-list cols="3" rowHeight="2:3">
   <mat-grid-tile>
-    <app-form-card [title]="'hi'" [items]="formList1"></app-form-card>
+    <app-form-card 
+        [state]="charService.characterProps$ | async"
+        [update]="charService.update"
+    ></app-form-card>
   </mat-grid-tile>
   <mat-grid-tile>
-      <mat-card>Simple card</mat-card>
+    <app-form-card 
+        [state]="phyService.enhanceProps$ | async"
+        [update]="phyService.update"
+    ></app-form-card>
   </mat-grid-tile>
   <mat-grid-tile>
-      <mat-card>Simple card</mat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-      <mat-card>Simple card</mat-card>
+      <mat-card>{{damageService.damage$ | async}}</mat-card>
   </mat-grid-tile>
 </mat-grid-list>

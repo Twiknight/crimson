@@ -1,11 +1,17 @@
 <mat-card class='card'>
   <mat-card-header>
-    {{title}}
+      <mat-card-title>{{state.desc}}</mat-card-title>
+      <mat-card-subtitle>calculated rate: {{state.rate}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <form>
-      <mat-form-field *ngFor="let item of items">
-        <input type='number' matInput [placeholder]="item.label" [value]="item.value">
+      <mat-form-field *ngFor="let item of state.items">
+        <input matInput
+          type='number' 
+          [placeholder]="item.description" 
+          [value]="item.value"
+          (change)="update(state, item.id, $event.target.value)"
+          >
       </mat-form-field>
     </form>
   </mat-card-content>
