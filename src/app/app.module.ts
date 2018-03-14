@@ -6,6 +6,7 @@ import {
   MatGridListModule,
   MatFormFieldModule,
   MatInputModule } from '@angular/material';
+import { FlexLayoutModule, MediaService } from '@angular/flex-layout';
 
 
 import { AppComponent } from './app.component';
@@ -28,12 +29,14 @@ import { DamageService } from './services/damage.service';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [
     CharacterPropsService,
     PhysicalEhancePropsService,
-    DamageService
+    DamageService,
+    MediaService
   ],
   bootstrap: [AppComponent]
 })

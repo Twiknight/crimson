@@ -1,17 +1,27 @@
-<mat-grid-list cols="3" rowHeight="2:3">
-  <mat-grid-tile>
+<mat-grid-list cols="6" rowHeight="1:1">
+  <mat-grid-tile 
+    [colspan]='colspan'
+    [rowspan]='rowspan'>
     <app-form-card 
         [state]="charService.characterProps$ | async"
         [update]="charService.update"
     ></app-form-card>
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile 
+    [colspan]='colspan'
+    [rowspan]='rowspan'>
     <app-form-card 
         [state]="phyService.enhanceProps$ | async"
         [update]="phyService.update"
     ></app-form-card>
   </mat-grid-tile>
-  <mat-grid-tile>
-      <mat-card>{{damageService.damage$ | async}}</mat-card>
+  <mat-grid-tile 
+    [colspan]='colspan' 
+    [rowspan]='rowspan'>
+      <mat-card>
+        <mat-card-content>
+          {{damageService.damage$ | async}}
+        </mat-card-content>
+      </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
