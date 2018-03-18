@@ -33,7 +33,7 @@ export class AppComponent {
         this.rowspan = 4;
       } else {
         this.colspan = 6;
-        this.rowspan = 9;
+        this.rowspan = 12;
       }
     });
   }

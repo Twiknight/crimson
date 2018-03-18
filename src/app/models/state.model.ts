@@ -10,12 +10,12 @@ export interface State {
 
 export class Character implements State {
     public attack: FormItem =
-        new FormItem('attack', 'attack', 1)
+        new FormItem('attack', '攻击力', 1)
     public skill: FormItem =
-        new FormItem('skill', 'skill rate(%)', 100)
+        new FormItem('skill', '技能倍率(%)', 100)
 
     get desc(): string {
-        return "Character attack and skill rate"
+        return "角色属性"
     }
 
     get items(): FormItem[] {
@@ -31,20 +31,20 @@ export class Character implements State {
 
 export class PhysicalEhance implements State {
     public physical_boost: FormItem =
-        new FormItem('physical_boost', 'physical damage boost(%)', 0)
+        new FormItem('physical_boost', '物理增伤(%)', 0)
     public physical_debuff: FormItem =
-        new FormItem('physical_debuff', 'target physical debff(%)', 0)
+        new FormItem('physical_debuff', '物理易伤(%)', 0)
     public common_boost: FormItem =
-        new FormItem('common_boost', 'common damage boost(%)', 0)
+        new FormItem('common_boost', '全伤害增伤(%)', 0)
     public common_debuff: FormItem =
-        new FormItem('common_debuff', 'target common debuff(%)', 0)
+        new FormItem('common_debuff', '全伤害易伤(%)', 0)
     public crit: FormItem =
-        new FormItem('crit', 'critical rate(%)', 0)
+        new FormItem('crit', '暴击几率(%)', 0)
     public crit_extra: FormItem =
-        new FormItem('crit_extra', 'extra critical damage (%)', 0)
+        new FormItem('crit_extra', '暴击伤害(%)', 0)
 
     get desc(): string {
-        return "Damange enhancement works with Physical"
+        return "物理增益效果"
     }
 
     public get items(): FormItem[] {
