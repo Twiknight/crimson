@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { PhysicalEhance } from '../models/state.model';
+import { Decimal } from 'decimal.js';
 
 @Injectable()
 export class PhysicalEhancePropsService {

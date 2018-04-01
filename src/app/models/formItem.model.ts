@@ -15,6 +15,8 @@ export class FormItem {
   }
 
   public modify(value: Decimal.Value) {
-    return new FormItem(this.id, this.description, this.defaultValue,new Decimal(value));
+    const decimal_value = new Decimal(value || NaN)
+    const _value = decimal_value.isNaN() ? this.defaultValue : decimal_value;
+    return new FormItem(this.id, this.description, this.defaultValue, _value);
   }
 }
